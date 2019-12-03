@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/restmon.iml" filepath="$PROJECT_DIR$/restmon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restmonMApp.iml" filepath="$PROJECT_DIR$/restmonMApp.iml" />
     </modules>
   </component>
 </project>

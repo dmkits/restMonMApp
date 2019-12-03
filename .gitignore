@@ -1,4 +1,8 @@
 # Created by .ignore support plugin (hsz.mobi)
 /package-lock.json
 /.idea/workspace.xml
-/platforms/android/app
+/.gradle
+/platforms/android
+/platforms
+/plugins
+/res
