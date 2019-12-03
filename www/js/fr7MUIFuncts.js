@@ -177,8 +177,7 @@ var framework7MUIFunctions= {
                 };
             }else if(rowSelecting)
                 newTR.onclick= selectOnClickFunction;
-            for(var i=0;i<newTR.children.length;i++){
-                var newTD= newTR.children[i];
+            for(var newTD of newTR.children){
                 var contentTableDataItemName= newTD.getAttribute("dataItemName"), val;
                 if(contentTableDataItemName!==undefined) val= contentTableDataItem[contentTableDataItemName];
                 var newTDText=newTD.firstChild||newTD;

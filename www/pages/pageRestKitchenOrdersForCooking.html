@@ -1,94 +1,94 @@
 <!--suppress ALL, JSAnnotator -->
 <template>
-    <div id="pageRestKitchOrdsForCook" class="page page-with-subnavbar">
-        <div class="navbar">
-            <div class="navbar-inner">
-                <div class="left">
-                    <a href="#" class="link icon-only panel-open" data-panel="left">
-                        <i class="icon f7-icons">menu</i>
-                    </a>
-                </div>
-                <div class="title docHeaderTitle">
-                    <span>Монитор заказов на кухню</span><br>
-                </div>
-                <div class="subnavbar docHeaderTitle" id="pageRestKitchOrdsForCookToolbar" style="width:100%;border-top-style:solid;border-top-width:1px">
-                    <div class="subnavbar-inner">
-                        <div class="row" style="padding-left:16px;padding-right:16px;">
-                            <input type="number" class="col" style="height:36px;min-width:130px;" id="pageRestKitchOrdsForCookBarCodeInput" placeholder="ШК или код заказа">
-                            <button class="col button button-outline button-round" id="pageRestKitchOrdsForCookBtnBarcodeInputEnter" style="width:70px;margin-top:3px">ВВОД</button>
-                            <button class="col button button-outline button-round" id="pageRestKitchOrdsForCookBtnRefresh" style="margin-left:15px; width:110px;margin-top:3px">ОБНОВИТЬ</button>
-                            <div>
-                                <span id="pageRestKitchOrdsForCookStateInfo" style="color:black;font-weight:bold;display:none"></span><br>
-                                <span id="pageRestKitchOrdsForCookStateName" style="color:black;font-weight:bold;font-size:12px;display:none"></span>
-                            </div>
+<div id="pageRestKitchOrdsForCook" class="page page-with-subnavbar">
+    <div class="navbar">
+        <div class="navbar-inner">
+            <div class="left">
+                <a href="#" class="link icon-only panel-open" data-panel="left">
+                    <i class="icon f7-icons">menu</i>
+                </a>
+            </div>
+            <div class="title docHeaderTitle">
+                <span>Монитор заказов на кухню</span><br>
+            </div>
+            <div class="subnavbar docHeaderTitle" id="pageRestKitchOrdsForCookToolbar" style="width:100%;border-top-style:solid;border-top-width:1px">
+                <div class="subnavbar-inner">
+                    <div class="row" style="padding-left:16px;padding-right:16px;">
+                        <input type="number" class="col" style="height:36px;min-width:130px;" id="pageRestKitchOrdsForCookBarCodeInput" placeholder="ШК или код заказа">
+                        <button class="col button button-outline button-round" id="pageRestKitchOrdsForCookBtnBarcodeInputEnter" style="width:70px;margin-top:3px">ВВОД</button>
+                        <button class="col button button-outline button-round" id="pageRestKitchOrdsForCookBtnRefresh" style="margin-left:15px; width:110px;margin-top:3px">ОБНОВИТЬ</button>
+                        <div>
+                            <span id="pageRestKitchOrdsForCookStateInfo" style="color:black;font-weight:bold;display:none"></span><br>
+                            <span id="pageRestKitchOrdsForCookStateName" style="color:black;font-weight:bold;font-size:12px;display:none"></span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="page-content" id="pageRestKitchOrdsForCookContent" style="padding-left:1px;padding-right:1px;padding-bottom:1px;">
-            <table class="mobile-table-sm-size1" height="30px" style="position:fixed;left:1px;top:88px;width:calc(100% - 2px);z-index:100;">
-                <thead>
-                <tr>
-                    <th width="75px"><span class="table-header-small">Код заказа</span></th>
-                    <th rowSpan="2"><span class="table-header-small">Наименование товара</span></th>
-                    <th width="45px"><span class="table-header-small">Кол-во</span></th>
-                    <th width="65px" rowSpan="2"><span class="table-header-small">Ожидание</span></th>
-                </tr>
-                <tr>
-                    <th width="75px"><span class="table-header-small">Начало</span></th>
-                    <th width="45px"><span class="table-header-small">Ед.изм.</span></th>
-                </tr>
-                </thead>
-                <tbody style="display:none">
-                <tr rowSelecting="true" onClick="restKitchOrdsForCookTableTROnClick">
-                    <td width="75px" class="text-centered" dataItemName="OrderID"><div class="table-text"></div></td>
-                    <td rowSpan="2" class="tdProdName" dataItemName="ProdName"><div class="table-text"></div></td>
-                    <td width="45px" class="tdQty" dataItemName="Qty"><div class="table-text"></div></td>
-                    <td width="65px" rowSpan="2" class="text-centered" dataItemName="WaitTime"><div class="table-text" style="font-weight:bold"></div></td>
-                </tr>
-                <tr rowSelecting="true" onClick="restKitchOrdsForCookTableTROnClick">
-                    <td width="75px" class="text-centered" dataItemName="sPrintTimeSmall"><div class="table-text"></div></td>
-                    <td width="45px" class="text-centered" dataItemName="UM"><div class="table-text"></div></td>
-                </tr>
-                </tbody>
-            </table>
-            <table class="mobile-table-large-size" height="30px" style="position:fixed;left:1px;top:88px;width:calc(100% - 2px);z-index:100;">
-                <thead>
-                <tr width="100%">
-                    <th width="75px"><div class="table-header-large">Код заказа</div></th>
-                    <th width="70px"><div class="table-header-large">Начало заказа</div></th>
-                    <th><div class="table-header-large">Наименование товара</div></th>
-                    <th width="50px"><div class="table-header-large">Ед.<br>изм.</div></th>
-                    <th width="45px"><div class="table-header-large">Кол-во</div></th>
-                    <th width="65px"><div class="table-header-large">Ожидание</div></th>
-                </tr>
-                </thead>
-                <tbody style="display:none">
-                <tr rowSelecting="true" onClick="restKitchOrdsForCookTableTROnClick">
-                    <td width="75px" class="text-centered" dataItemName="OrderID"><div class="table-text"></div></td>
-                    <td width="70px" class="text-centered" dataItemName="sPrintTime"><div class="table-text"></div></td>
-                    <td class="tdProdName" dataItemName="ProdName"><div class="table-text"></div></td>
-                    <td width="50px" class="text-centered" dataItemName="UM"><div class="table-text"></div></td>
-                    <td width="45px" class="tdQty" dataItemName="Qty"><div class="table-text"></div></td>
-                    <td width="65px" class="text-centered" dataItemName="WaitTime"><div class="table-text" style="font-weight:bold"></div></td>
-                </tr>
-                </tbody>
-            </table>
-            <table class="mobile-table-small-size" style="margin-top:33px;margin-bottom:30px;width:100%"></table>
-            <table class="mobile-table-large-size" style="margin-top:33px;margin-bottom:30px;width:100%"></table>
-            <table height="30px" style="position:fixed;left:1px;bottom:0px;width:calc(100% - 2px);z-index:100">
-                <tfoot>
-                <tr>
-                    <td id="totalRows" width="75px"><span class="table-total">0</span></td>
-                    <td><span class="table-total"></span></td>
-                    <td id="totalQty" width="45px"><span class="table-total">0</span></td>
-                    <td width="65px"></td>
-                </tr>
-                </tfoot>
-            </table>
-        </div>
     </div>
+    <div class="page-content" id="pageRestKitchOrdsForCookContent" style="padding-left:1px;padding-right:1px;padding-bottom:1px;">
+        <table class="mobile-table-sm-size1" height="30px" style="position:fixed;left:1px;top:88px;width:calc(100% - 2px);z-index:100;">
+            <thead>
+            <tr>
+                <th width="75px"><span class="table-header-small">Код заказа</span></th>
+                <th rowSpan="2"><span class="table-header-small">Наименование товара</span></th>
+                <th width="45px"><span class="table-header-small">Кол-во</span></th>
+                <th width="65px" rowSpan="2"><span class="table-header-small">Ожидание</span></th>
+            </tr>
+            <tr>
+                <th width="75px"><span class="table-header-small">Начало</span></th>
+                <th width="45px"><span class="table-header-small">Ед.изм.</span></th>
+            </tr>
+            </thead>
+            <tbody style="display:none">
+            <tr rowSelecting="true" onClick="restKitchOrdsForCookTableTROnClick">
+                <td width="75px" class="text-centered" dataItemName="OrderID"><div class="table-text"></div></td>
+                <td rowSpan="2" class="tdProdName" dataItemName="ProdName"><div class="table-text"></div></td>
+                <td width="45px" class="tdQty" dataItemName="Qty"><div class="table-text"></div></td>
+                <td width="65px" rowSpan="2" class="text-centered" dataItemName="WaitTime"><div class="table-text" style="font-weight:bold"></div></td>
+            </tr>
+            <tr rowSelecting="true" onClick="restKitchOrdsForCookTableTROnClick">
+                <td width="75px" class="text-centered" dataItemName="sPrintTimeSmall"><div class="table-text"></div></td>
+                <td width="45px" class="text-centered" dataItemName="UM"><div class="table-text"></div></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="mobile-table-large-size" height="30px" style="position:fixed;left:1px;top:88px;width:calc(100% - 2px);z-index:100;">
+            <thead>
+            <tr width="100%">
+                <th width="75px"><div class="table-header-large">Код заказа</div></th>
+                <th width="70px"><div class="table-header-large">Начало заказа</div></th>
+                <th><div class="table-header-large">Наименование товара</div></th>
+                <th width="50px"><div class="table-header-large">Ед.<br>изм.</div></th>
+                <th width="45px"><div class="table-header-large">Кол-во</div></th>
+                <th width="65px"><div class="table-header-large">Ожидание</div></th>
+            </tr>
+            </thead>
+            <tbody style="display:none">
+            <tr rowSelecting="true" onClick="restKitchOrdsForCookTableTROnClick">
+                <td width="75px" class="text-centered" dataItemName="OrderID"><div class="table-text"></div></td>
+                <td width="70px" class="text-centered" dataItemName="sPrintTime"><div class="table-text"></div></td>
+                <td class="tdProdName" dataItemName="ProdName"><div class="table-text"></div></td>
+                <td width="50px" class="text-centered" dataItemName="UM"><div class="table-text"></div></td>
+                <td width="45px" class="tdQty" dataItemName="Qty"><div class="table-text"></div></td>
+                <td width="65px" class="text-centered" dataItemName="WaitTime"><div class="table-text" style="font-weight:bold"></div></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="mobile-table-small-size" style="margin-top:33px;margin-bottom:30px;width:100%"></table>
+        <table class="mobile-table-large-size" style="margin-top:33px;margin-bottom:30px;width:100%"></table>
+        <table height="30px" style="position:fixed;left:1px;bottom:0px;width:calc(100% - 2px);z-index:100">
+            <tfoot>
+            <tr>
+                <td id="totalRows" width="75px"><span class="table-total">0</span></td>
+                <td><span class="table-total"></span></td>
+                <td id="totalQty" width="45px"><span class="table-total">0</span></td>
+                <td width="65px"></td>
+            </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
 </template>
 <script>
     return {

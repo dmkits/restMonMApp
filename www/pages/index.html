@@ -66,7 +66,10 @@
             }),
             mainView= app7.views.create('.view-main',{domCache:true,stackPages:true});                          //app7.dialog.alert('<span style="font-size:9px">1</span>','debug');//IT'S FOR TEST
     framework7MUIFunctions.init(app7);
-    app7.convertRoutesForMApp=function(userRoutesItems){
+    app7.initViewMApp= function(lPanelMAppSettings){
+        if(lPanelMAppSettings) lPanelMAppSettings.show();
+    };
+    app7.convertRoutesForMApp= function(userRoutesItems){
         if(!userRoutesItems) return;
         for(var userRoutesItem of userRoutesItems){
             if(userRoutesItem&&userRoutesItem.url){
@@ -79,11 +82,10 @@
             }
         }
     };
-    app7.setMAppRoutes= function(newRoutes,lPanelMAppSettings){
+    app7.setMAppRoutes= function(newRoutes){
         if(!newRoutes||!mAppRoutes||mAppRoutes.length==0) return;
         for(var mAppRouteItem of mAppRoutes)
             newRoutes.splice(newRoutes.length-1,0,mAppRouteItem);
-        if(lPanelMAppSettings) lPanelMAppSettings.show();
     };
     app7.setMAppRoutes(baseRoutes);
     app7.convertRoutesForMApp(baseRoutes);                                                                      //app7.dialog.alert('<span style="font-size:8px">'+JSON.stringify(result,null,2)+'</span>','debug');//IT'S FOR TEST
